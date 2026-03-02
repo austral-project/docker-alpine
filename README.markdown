@@ -7,7 +7,7 @@
 [![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/australproject/alpine)](https://img.shields.io/docker/image-size/australproject/alpine)
 
 __Versions__
-* Alpine : 3.20
+* Alpine : 3.23
 
 ## Commit Messages
 The commit message must follow the [Conventional Commits specification](https://www.conventionalcommits.org/).
