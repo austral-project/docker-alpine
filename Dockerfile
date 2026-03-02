@@ -11,6 +11,7 @@ ARG GROUP_ID=1000
 RUN apk update && apk upgrade && apk add --update --no-cache \
     bash \
     bash-completion \
+    shadow \
     curl \
     wget \
     git \
@@ -26,8 +27,8 @@ RUN apk update && apk upgrade && apk add --update --no-cache \
     zip \
     json-glib \
     && rm -rf /var/cache/apk/* \
-    && addgroup -g ${GROUP_ID} www-data \
     && adduser -u ${USER_ID} -S -G www-data -h /home/www-data -D -s /bin/bash www-data \
+    && groupmod -g ${GROUP_ID} www-data \
     && mkdir -p /home/www-data/website \
     && chown -R www-data:www-data /home/www-data \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
