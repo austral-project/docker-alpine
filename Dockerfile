@@ -40,5 +40,4 @@ RUN chown www-data:www-data /home/www-data/.profile /home/www-data/.bashrc /home
 
 #  Init Workdir
 WORKDIR /home/www-data/website
-USER www-data
 ENV HOME=/home/www-data
