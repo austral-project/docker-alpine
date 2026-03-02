@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.23
 LABEL maintainer="Matthieu Beurel <matthieu@austral.dev>"
 
 ARG TZ="Europe/Paris"
@@ -41,5 +41,5 @@ COPY config/vimrc /home/www-data/.vimrc
 RUN chown www-data:www-data /home/www-data/.vimrc
 RUN chmod 644 /home/www-data/.vimrc
 
-RUN cp /usr/share/zoneinfo/Europe/Brussels /etc/localtime
+RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 RUN echo ${TZ} >  /etc/timezone

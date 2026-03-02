@@ -1,6 +1,10 @@
 Changelog
 =========
 
+### Version 3.23 (2026-03-02)
+* Update Alpine Version to 3.23
+* Create an image in the Docker hub
+
 ### Version 3.20 (2023-07-16)
 * Update Alpine Version to 3.20
 * Create an image in the Docker hub
