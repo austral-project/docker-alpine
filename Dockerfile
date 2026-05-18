@@ -24,6 +24,7 @@ RUN apk update && apk upgrade && apk add --update --no-cache \
     zlib \
     libxml2 \
     openssl \
+    openssh-client \
     zip \
     json-glib \
     && rm -rf /var/cache/apk/* \
