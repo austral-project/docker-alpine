@@ -1,5 +1,5 @@
 # Dockerfile.alpine
-FROM alpine:3.23
+FROM alpine:3.7
 LABEL maintainer="Matthieu Beurel <matthieu@austral.dev>"
 
 # Default vars
@@ -28,12 +28,16 @@ RUN apk update && apk upgrade && apk add --update --no-cache \
     zip \
     json-glib \
     && rm -rf /var/cache/apk/* \
+    && if getent group www-data >/dev/null; then \
+         groupmod -g ${GROUP_ID} www-data; \
+       else \
+         addgroup -g ${GROUP_ID} www-data; \
+       fi \
     && adduser -u ${USER_ID} -S -G www-data -h /home/www-data -D -s /bin/bash www-data \
-    && groupmod -g ${GROUP_ID} www-data \
     && mkdir -p /home/www-data/website \
     && chown -R www-data:www-data /home/www-data \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
-    && echo ${TZ} >  /etc/timezone
+    && echo ${TZ} > /etc/timezone
 
 # Config file
 COPY config/.profile config/.bashrc config/.vimrc /home/www-data/
