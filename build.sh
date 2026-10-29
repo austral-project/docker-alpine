@@ -7,7 +7,7 @@
 set -euo pipefail
 
 IMAGE="australproject/alpine"
-TAG="3.20"
+TAG="3.22"
 PLATFORMS="linux/amd64,linux/arm64"
 BUILDER="multi"
 

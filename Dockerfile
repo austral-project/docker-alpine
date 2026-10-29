@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.22
 LABEL maintainer="Matthieu Beurel <matthieu@austral.dev>"
 
 ARG TZ="Europe/Paris"
